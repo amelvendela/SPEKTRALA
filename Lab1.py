@@ -4,4 +4,9 @@ import scipy
 import scipy.signal
 import imageio
 
-print("hej")
+stockholm = imageio.imread("sthlm.jpg")
+
+
+plt.imshow(stockholm, cmap='gray')
+plt.title('Stockholm')
+plt.show()
