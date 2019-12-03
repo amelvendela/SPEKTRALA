@@ -6,13 +6,15 @@ import imageio
 import math
 
 
+
+
 def block(i):
     bs = 8
     c = np.zeros(i.shape)
     for p in range(0, math.floor(i.shape[0] / bs)):
         for q in range(0, math.floor(i.shape[1] / bs)):
             isub = i[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs]  # Man skapar 8x8 block
-            average = np.mean(isub)
+
 
             # Skapa prick
 
