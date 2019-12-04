@@ -33,10 +33,10 @@ def halftoning(i, bs):
 image = imageio.imread("sthlm.jpg")
 image_bw = np.mean(image, axis=2)
 plt.imshow(image_bw, cmap="gray")
-plt.title("Stockholm original")
+plt.title("Original image")
 plt.show()
 
 mean_image = halftoning(image_bw, 4)
 plt.imshow(mean_image.astype('uint8'), cmap="gray")
-plt.title("Stockholm block")
+plt.title("Halftoned image")
 plt.show()
