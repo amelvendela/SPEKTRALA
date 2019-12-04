@@ -5,7 +5,7 @@ import math
 
 
 def grey_averages(i):
-    i = 255 - i
+    #i = 255 - i
     bs = 8
     all_blocks = np.zeros(i.shape)
 
@@ -36,7 +36,9 @@ def grey_averages(i):
     return all_blocks
 
 
-sthlm = imageio.imread("sthlm.jpg")
+
+
+sthlm = imageio.imread("katter.jpg")
 sthlm_bw = np.mean(sthlm, axis=2)
 plt.imshow(sthlm_bw, cmap="gray")
 plt.title("Stockholm original")
