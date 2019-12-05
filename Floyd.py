@@ -4,10 +4,9 @@ import imageio
 import math
 
 
-def halftoning(i, bs):
+def greys(i, bs):
     i = 255 - i
-    all_blocks = np.zeros(i.shape)
-
+    full_i = np.zeros(i.shape)
     for p in range(0, math.floor(i.shape[0] / bs)):
         for q in range(0, math.floor(i.shape[1] / bs)):
             block = i[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs]  # Skapar blocken
@@ -15,19 +14,34 @@ def halftoning(i, bs):
             greytone_average = np.average(block)
             pixel_amount = int(greytone_average * (block.size / 255))  # får inte vara fler pixlar än 64 per ruta
 
-            radius = np.sqrt(pixel_amount / np.pi)
-            m = np.zeros((bs, bs))  # Skapar en matris
+            m = np.zeros(bs*bs)
+            for h in range(pixel_amount):  # Går igenom varje pixel och sätter värden till vår matris
+                m[h] = 255
 
-            for x in range(bs):  # Går igenom varje pixel och sätter värden till vår matris
-                for y in range(bs):
-                    if radius <= np.sqrt((x-(bs / 2)) ** 2 + (y - (bs / 2))**2):  # cirkelns ekvation
-                        m[x, y] = 255
-                    else:
-                        m[x, y] = 0
+            m = m.reshape((bs, bs))
+            full_i[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs] = m  # Sätter ihop alla block
 
-            all_blocks[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs] = m  # Sätter ihop alla block
+    return full_i
 
-    return all_blocks
+
+def floyd_steinberg(i):
+    floyd = np.zeros(i.shape)
+    height, width = i.shape
+    pixel = greys(i, 8)
+    factor = 1
+    for x in range(1, width-1):
+        for y in range(0, height-1):
+            old_pixel = pixel[x][y]
+            new_pixel = np.round(factor * old_pixel / 255) * (255 / factor)
+            pixel[x][y] = new_pixel
+            quant_error = old_pixel - new_pixel
+
+            floyd[x + 1][y] = floyd[x+1][y] + quant_error * 7 / 16
+            floyd[x-1][y+1] = floyd[x-1][y+1] + quant_error * 3 / 16
+            floyd[x][y+1] = floyd[x][y+1] + quant_error * 5 / 16
+            floyd[x+1][y+1] = floyd[x+1][y+1] + quant_error * 1 / 16
+
+    return floyd
 
 
 image = imageio.imread("sthlm.jpg")
@@ -36,7 +50,7 @@ plt.imshow(image_bw, cmap="gray")
 plt.title("Original image")
 plt.show()
 
-mean_image = halftoning(image_bw, 4)
+mean_image = floyd_steinberg(image_bw)
 plt.imshow(mean_image.astype('uint8'), cmap="gray")
 plt.title("Halftoned image")
 plt.show()
