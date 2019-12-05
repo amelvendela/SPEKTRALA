@@ -6,7 +6,6 @@ import math
 
 def halftoning(i, bs):
     i = 255 - i
-    bs = 8
     all_blocks = np.zeros(i.shape)
 
     # dela upp bilden i block
@@ -36,13 +35,13 @@ def halftoning(i, bs):
     return all_blocks
 
 
-image = imageio.imread("katter.jpg")
+image = imageio.imread("5079_ny.jpg")
 image_bw = np.mean(image, axis=2)
-plt.imshow(image_bw, cmap="gray")
+plt.imshow(image, cmap="gray")
 plt.title("Original image")
 plt.show()
 
-mean_image = halftoning(image_bw, 4)
+mean_image = halftoning(image_bw, 8)
 plt.imshow(mean_image.astype('uint8'), cmap="gray")
 plt.title("Halftoned image")
 plt.show()
