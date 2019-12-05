@@ -6,7 +6,6 @@ import math
 
 def halftoning(i, bs):
     i = 255 - i
-    bs = 8
     all_blocks = np.zeros(i.shape)
 
     # dela upp bilden i block
@@ -19,7 +18,6 @@ def halftoning(i, bs):
 
             greytone_average = np.average(block)
             pixel_amount = int(greytone_average * (block.size / 255))  # får inte vara fler pixlar än 64 per ruta
-
             radius = np.sqrt(pixel_amount / np.pi)
             m = np.zeros((bs, bs))  # Skapar en matris
 
@@ -27,21 +25,32 @@ def halftoning(i, bs):
             for x in range(bs):  # Går igenom varje pixel och sätter värden till vår matris
                 for y in range(bs):
                     if radius <= np.sqrt((x-(bs / 2)) ** 2 + (y - (bs / 2))**2):  # cirkelns ekvation
-                        m[x, y] = 255
+                        if i[p, q] == 255:
+                            m[x, y] = 255
                     else:
-                        m[x, y] = 0
+                        if i[p, q] == 0:
+                            m[x, y] = 0
+                    #if radius <= np.sqrt((x-(bs / 2)) ** 2 + (y - (bs / 2))**2):
+                        #m[x, y] = 0
+                    #else:
+                        #m[x, y] = 255
 
             all_blocks[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs] = m  # Sätter ihop alla block
 
     return all_blocks
 
-image = imageio.imread("katter.jpg")
+
+#image = imageio.imread("katter.jpg")
+
+
+image = imageio.imread("5079_ny.jpg")
+
 image_bw = np.mean(image, axis=2)
-plt.imshow(image_bw, cmap="gray")
+plt.imshow(image, cmap="gray")
 plt.title("Original image")
 plt.show()
 
-mean_image = halftoning(image_bw, 4)
+mean_image = halftoning(image_bw, 8)
 plt.imshow(mean_image.astype('uint8'), cmap="gray")
 plt.title("Halftoned image")
 plt.show()
