@@ -41,7 +41,24 @@ def floyd_steinberg(i):
             floyd[x][y+1] = floyd[x][y+1] + quant_error * 5 / 16
             floyd[x+1][y+1] = floyd[x+1][y+1] + quant_error * 1 / 16
 
+
     return floyd
+
+
+'''quant_error = i - all_blocks
+
+            for p in range(0, math.floor(i.shape[0] / bs)):
+                for q in range(0, math.floor(i.shape[1] / bs)):
+                    # Extract an 8x8 sub matrix 'Isub' from the original image
+                    Isub = i[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs]
+
+                    # Put matrix operation under this line
+                    new_isub = Isub / all_blocks
+                    new_isub = np.trunc(new_isub)
+                    P[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs] = new_isub
+                    P[p * bs: (p + 1) * bs, q * bs: (q + 1) * bs] *= w_matrix
+
+    return all_blocks'''
 
 
 image = imageio.imread("sthlm.jpg")
