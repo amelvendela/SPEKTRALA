@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84c212be-4c11-4c14-ac4f-b0d9fb8ba758" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Floyd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Floyd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +12,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Floyd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="219">
+              <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lab1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="12" selection-start-line="8" selection-end-line="9" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -40,8 +52,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Halvtoning.py" />
-        <option value="$PROJECT_DIR$/Lab1.py" />
         <option value="$PROJECT_DIR$/Floyd.py" />
+        <option value="$PROJECT_DIR$/Lab1.py" />
       </list>
     </option>
   </component>
@@ -86,7 +98,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Floyd">
+  <component name="RunManager" selected="Python.Lab1">
     <configuration name="Floyd" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Spektrala Transformer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,8 +164,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Floyd" />
         <item itemvalue="Python.Lab1" />
+        <item itemvalue="Python.Floyd" />
         <item itemvalue="Python.Halvtoning" />
       </list>
     </recent_temporary>
@@ -184,12 +196,12 @@
     <frame x="0" y="23" width="1440" height="793" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2184637" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2184637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32952926" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32952926" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942938" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -215,20 +227,23 @@
     <entry file="file://$PROJECT_DIR$/sthlm.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab1.py">
+    <entry file="file://$PROJECT_DIR$/uggla2.tif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Floyd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" selection-end-column="36" />
+        <state relative-caret-position="219">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Floyd.py">
+    <entry file="file://$PROJECT_DIR$/Lab1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state relative-caret-position="120">
+          <caret line="8" column="12" selection-start-line="8" selection-end-line="9" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
