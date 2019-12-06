@@ -24,7 +24,8 @@ def floyd_steinberg(i):
     return floyd
 
 
-image = imageio.imread("sthlm.jpg")
+
+image = imageio.imread("katter.jpg")
 image_bw = np.mean(image, axis=2)
 plt.imshow(image_bw, cmap="gray")
 plt.title("Original image")
