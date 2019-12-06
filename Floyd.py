@@ -10,12 +10,12 @@ def floyd_steinberg(i):
     for x in range(1, height-1):
         for y in range(0, width-1):
 
-            if i[x, y] < 127.5:
-                floyd[x, y] = 0
+            if i[x][y] < 127.5:
+                floyd[x][y] = 0
             else:
-                floyd[x, y] = 255
+                floyd[x][y] = 255
 
-            quant_error = i[x, y] - floyd[x, y]
+            quant_error = i[x][y] - floyd[x][y]
             i[x + 1][y] = i[x+1][y] + quant_error * 7 / 16
             i[x][y + 1] = i[x][y + 1] + quant_error * 5 / 16
             i[x-1][y+1] = i[x-1][y+1] + quant_error * 3 / 16
